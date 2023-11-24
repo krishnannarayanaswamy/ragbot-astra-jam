@@ -1,0 +1,43 @@
+configuration:
+  defaults:
+    globals:
+      assistantType: "Banking project"
+      vectorKeyspace: "finbotastra"
+      vectorTable: "bankproccessdocs"
+      chatTable: "bankdocshistory"
+      vectorIndex: "annragstax"
+      chunksTopic: "ragstax-chunks"
+      questionsTopic: "ragstax-questions"
+      answersTopic: "ragstax-answers"
+      chatModelName: "gpt-35-turbo"
+      logTopic: "ragstax-logs"
+      seedUrls: 
+        - "https://www.hatthabank.com/"
+      allowedUrls: 
+        - "https://www.hatthabank.com/"
+      forbiddenPaths: []
+      vectorDb: ""
+  resources:
+  - type: "open-ai-configuration"
+    name: "OpenAI configuration"
+    configuration:
+      access-key: "${secrets.open-ai.access-key}"
+      provider: "openai"
+  - type: "datasource"
+    name: "AstraDatasource"
+    configuration:
+        service: "astra"
+        clientId: "${secrets.astra.clientId}"
+        secret: "${secrets.astra.secret}"
+        token: "${secrets.astra.token}"
+        database: "${secrets.astra.database}"
+        environment: "${secrets.astra.environment}"
+  - type: "vector-database"
+    name: "AstraVector"
+    configuration:
+        service: "astra"
+        clientId: "${secrets.astra.clientId}"
+        secret: "${secrets.astra.secret}"
+        token: "${secrets.astra.token}"
+        database: "${secrets.astra.database}"
+        environment: "${secrets.astra.environment}"
