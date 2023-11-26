@@ -1,20 +1,20 @@
 configuration:
   defaults:
     globals:
-      assistantType: "Banking project"
-      vectorKeyspace: "finbotastra"
-      vectorTable: "bankproccessdocs"
-      chatTable: "bankdocshistory"
-      vectorIndex: "annragstax"
-      chunksTopic: "ragstax-chunks"
-      questionsTopic: "ragstax-questions"
-      answersTopic: "ragstax-answers"
-      chatModelName: "gpt-35-turbo"
-      logTopic: "ragstax-logs"
+      assistantType: "RAGStack project"
+      vectorKeyspace: "ragstack"
+      vectorTable: "cassiodocs"
+      chatTable: "cassiohistory"
+      vectorIndex: "annragbot"
+      chunksTopic: "ragbotjam-chunks"
+      questionsTopic: "ragbotjam-questions"
+      answersTopic: "ragbotjam-answers"
+      chatModelName: "gpt-4"
+      logTopic: "ragbotjam-logs"
       seedUrls: 
-        - "https://www.hatthabank.com/"
+        - "https://cassio.org/"
       allowedUrls: 
-        - "https://www.hatthabank.com/"
+        - "https://cassio.org/"
       forbiddenPaths: []
       vectorDb: ""
   resources:
